@@ -54,6 +54,8 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
+    implementation 'androidx.activity:activity-ktx:1.6.1'
+
     // coroutine
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
     // retrofit for api calling
@@ -61,8 +63,14 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     //Room Database
-    implementation 'androidx.room:room-ktx:2.5.2'
-    kapt "androidx.room:room-compiler:2.5.2"
+    //implementation 'androidx.room:room-ktx:2.5.2'
+    //kapt "androidx.room:room-compiler:2.5.2"
+
+    def roomVersion = "2.4.0" // Check for the latest version
+    implementation "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2" // Add Coroutine dependency
 
     // http logger
     implementation "com.squareup.okhttp3:okhttp:4.9.3"
